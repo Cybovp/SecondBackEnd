@@ -1,0 +1,66 @@
+﻿@model Test
+@{
+    ViewData["Title"] = "Delete";
+} 
+  <form method="post" asp-action="Delete">
+      <input asp-for="ID" hidden/>
+    <div class="border p-3 mt-4 ">
+    <fieldset>
+      <legend>Delete Form</legend>
+      <div class="form-group">
+        <label asp-for="FirstName" class="form-label mt-4">
+            First Name
+            </label>
+        <input asp-for="FirstName" disabled type="text" class="form-control" id="FirstName" aria-describedby="firstNameHelp" placeholder="Enter First Name">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="LastName" class="form-label mt-4">
+            Last Name
+            </label>
+        <input asp-for="LastName" disabled  type="text" class="form-control" id="LastName" aria-describedby="lastNameHelp" placeholder="Enter Last Name">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Age" class="form-label mt-4">
+            Age
+            </label>
+        <input asp-for="Age" disabled  type="number" class="form-control" id="Age" aria-describedby="lastNameHelp" placeholder="Enter Your Age">
+        <span asp-validation-for="Age" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Email" class="form-label mt-4">
+            Email address
+            </label>
+        <input asp-for="Email" disabled  type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Password" class="form-label mt-4">
+            Password
+            </label>
+        <input asp-for="Password" disabled  type="password" class="form-control" id="Password" placeholder="Password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="DisplayOrder" class="form-label mt-4">
+            Display Order
+            </label>
+        <input asp-for="DisplayOrder" disabled  type="number" class="form-control" id="DisplayOrder" placeholder="Display Order">
+        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+      </div>
+      <button style="margin-top:20px" type="submit" class="btn btn-primary">
+          Delete
+          </button>
+      <a style="margin-top:20px" class="btn btn-secondary" asp-area="" asp-controller="TestHome" asp-action="Index">
+          Back
+          </a>
+    </fieldset>
+    </div>
+  </form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" ></partial>
+    }
+}
